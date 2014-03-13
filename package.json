@@ -1,0 +1,20 @@
+{
+  "name": "ideabucket",
+  "version": "1.0.0",
+  "description": "ideabucket",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine spec/",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guivinicius/ideabucket.git"
+  },
+  "author": "Guilherme Vinicius Moreira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guivinicius/ideabucket/issues"
+  },
+  "homepage": "https://github.com/guivinicius/ideabucket"
+}
