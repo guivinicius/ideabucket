@@ -2,11 +2,7 @@
   "name": "ideabucket",
   "version": "1.0.0",
   "description": "ideabucket",
-  "main": "app.js",
-  "scripts": {
-    "test": "jasmine spec/",
-    "start": "node app.js"
-  },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git://github.com/guivinicius/ideabucket.git"
@@ -16,5 +12,19 @@
   "bugs": {
     "url": "https://github.com/guivinicius/ideabucket/issues"
   },
-  "homepage": "https://github.com/guivinicius/ideabucket"
+  "homepage": "https://github.com/guivinicius/ideabucket",
+  "scripts": {
+    "test": "jasmine spec/",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "3.5.0",
+    "ejs": "x",
+    "mongoose": "x"
+  },
+  "devDependencies": {
+    "nodemon": "x",
+    "jasmine-node": "x",
+    "request": "x"
+  }
 }
