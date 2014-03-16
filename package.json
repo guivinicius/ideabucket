@@ -1,30 +1,21 @@
 {
   "name": "ideabucket",
   "version": "1.0.0",
-  "description": "ideabucket",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/guivinicius/ideabucket.git"
-  },
-  "author": "Guilherme Vinicius Moreira",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/guivinicius/ideabucket/issues"
-  },
-  "homepage": "https://github.com/guivinicius/ideabucket",
   "scripts": {
-    "test": "jasmine spec/",
-    "start": "nodemon app.js"
+    "test": "grunt test",
+    "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.5.0",
-    "ejs": "x",
-    "mongoose": "x"
+    "express": "3.5.x",
+    "ejs": "*",
+    "mongoose": "*"
   },
   "devDependencies": {
-    "nodemon": "x",
-    "jasmine-node": "x",
-    "request": "x"
+    "request": "*",
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-jasmine": "~0.6.1",
+    "grunt-nodemon": "^0.2.1"
   }
 }
