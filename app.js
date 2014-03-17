@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express'),
     http    = require('http'),
     path    = require('path'),
@@ -7,7 +5,7 @@ var express = require('express'),
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -25,7 +23,7 @@ if ('development' === app.get('env')) {
 var controllers = require('./app/controllers');
 
 // Loading routes
-var routes = require('./config/routes')(app, controllers);
+require('./config/routes')(app, controllers);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

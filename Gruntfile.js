@@ -13,22 +13,34 @@ module.exports = function(grunt) {
         'Gruntfile.js',
         'app/**/*.js',
         'spec/**/*.js'
-      ]
-    },
-    jasmine: {
-      src: ['app.js', 'app/**/*.js'],
+      ],
       options: {
-        specs: 'spec/**/*.js'
+        jshintrc: '.jshintrc'
       }
+    },
+    jasmine_node: {
+      options: {
+        forceExit: true,
+        match: '.',
+        matchall: false,
+        extensions: 'js',
+        specNameMatcher: 'spec'
+      },
+      all: ['spec/']
+    },
+    watch: {
+      files: ['app.js', 'app/**/*.js', 'config/*.js', 'spec/**/*.js'],
+      tasks: ['spec']
     }
   });
 
   // Loading modules
   grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('spec', ['jshint', 'jasmine']);
+  grunt.registerTask('spec', ['jshint', 'jasmine_node']);
 
   grunt.registerTask('default', ['nodemon']);
 };
