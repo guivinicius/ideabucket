@@ -1,7 +1,10 @@
-var express = require('express'),
-    http    = require('http'),
-    path    = require('path'),
-    app     = express();
+'use strict';
+
+var express  = require('express'),
+    http     = require('http'),
+    path     = require('path'),
+    app      = express(),
+    mongoose = require('mongoose');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -18,6 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
+
+// Database
+mongoose.connect('mongodb://localhost/ideasbucket');
+
+// Loading models
+require('./app/models/idea');
 
 // Loading controllers
 var controllers = require('./app/controllers');
